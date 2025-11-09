@@ -40,7 +40,7 @@
                     Opened="OnFlyoutOpened"
                     Placement="BottomEdgeAlignedRight">
                     <MenuFlyoutItem>
-                        <!-- 这是自定义的账户卡片 llp -->
+                        <!--  这是自定义的账户卡片 llp -->
                         <MenuFlyoutItem.Template>
                             <ControlTemplate>
                                 <local:AccountCard Width="300" />
