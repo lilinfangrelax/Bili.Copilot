@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!-- 头部账户控制组件 -->
 <local:HeaderAccountControlBase
     x:Class="BiliCopilot.UI.Controls.Components.HeaderAccountControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -11,15 +12,18 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
-        <ProgressRing
+    <!-- 主布局网格 -->
+<Grid>
+        <!-- 加载进度环 -->
+<ProgressRing
             x:Name="LoadingRing"
             Width="20"
             Height="20"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             IsActive="{x:Bind ViewModel.IsInitializing, Mode=OneWay}" />
-        <Button Style="{StaticResource AvatarButtonStyle}">
+        <!-- 头像按钮 -->
+<Button Style="{StaticResource AvatarButtonStyle}">
             <controls:BasicCoverImage
                 x:Name="Avatar"
                 Width="28"
@@ -29,12 +33,14 @@
                 DecodeWidth="56"
                 Source="{x:Bind ViewModel.MyProfile.User.Avatar.Uri, Mode=OneWay}"
                 Visibility="{x:Bind ViewModel.MyProfile, Mode=OneWay, Converter={StaticResource ObjectToVisibilityConverter}}" />
-            <Button.Flyout>
+            <!-- 按钮的弹出菜单 -->
+<Button.Flyout>
                 <MenuFlyout
                     Closed="OnFlyoutClosed"
                     Opened="OnFlyoutOpened"
                     Placement="BottomEdgeAlignedRight">
                     <MenuFlyoutItem>
+                        <!-- 这是自定义的账户卡片 llp -->
                         <MenuFlyoutItem.Template>
                             <ControlTemplate>
                                 <local:AccountCard Width="300" />
